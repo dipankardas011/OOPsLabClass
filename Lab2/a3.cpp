@@ -39,7 +39,7 @@ int main(int argc, char const *argv[])
     int n;
     printf("Enter the no of students.. ");
     std::cin>>n;
-    ss = (Student*)malloc(n*sizeof(Student));
+    ss = new Student[n];
 
     std::string x;
     int roll, mark, total, subjects;
@@ -65,9 +65,6 @@ int main(int argc, char const *argv[])
         std::cout<<"Student "<<(i+1)<<std::endl;
         ss[i].display();
     }
-
-    free(ss);
-
     remove(argv[0]);
     return 0;
 }
