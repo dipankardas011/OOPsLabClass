@@ -17,9 +17,6 @@ public:
 class Calculate{
 public:
     Calculate(Complex a, Complex b):r(a.real+b.real),i(a.img+b.img){
-        r=(a.real+b.real);
-        i=(a.img+b.img);
-
         std::cout<<r<<" "<<i<<"i"<<std::endl;
     }
 
