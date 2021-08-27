@@ -6,14 +6,10 @@ public:
     Fabonacci():a(0),b(1){}
     Fabonacci(Fabonacci& f){
         int t=f.a+f.b;
-        this->a = f.b;
-        this->b = t;
+        f.a = f.b;
+        f.b = t;
 
         std::cout<<t<<" ";
-    }
-    void operator=(Fabonacci& copy){
-        this->a=copy.a;
-        this->b=copy.b;
     }
     void display(){
         std::cout<<a<<" "<<b<<" ";
@@ -35,7 +31,6 @@ int main(int argc, char const *argv[])
 
     while(n-- > 0){
         Fabonacci cpy(start);
-        start=cpy;
     }
     remove(argv[0]);
     return 0;
