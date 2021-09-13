@@ -21,4 +21,3 @@ a student.✅
 # O/P
 ![](../Lab06/01.png)
 ![](../Lab06/02.png)
-![](../Lab06/03.png)
