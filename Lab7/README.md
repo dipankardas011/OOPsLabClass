@@ -10,4 +10,5 @@
 * inline function✅
 
 # O/P
-
+![](../Lab7/01.png)
+![](../Lab7/02.png)

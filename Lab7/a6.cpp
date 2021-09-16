@@ -5,6 +5,10 @@ inline int multiply(int a, int b){
     return a*b;
 }
 
+// int multiply(int a, int b){
+//     return a*b;
+// }
+
 int main(int argc, char const *argv[])
 {
     std::cout<<"Multiply: "<<multiply(23,54)<<std::endl;

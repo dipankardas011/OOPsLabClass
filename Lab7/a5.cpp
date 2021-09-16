@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-void function(std::string name, int roll, int marks=0, char grade='-'){
+void function(std::string name, int roll, int marks=-99, char grade='-'){
     cout<<"~~~~~~~~~~~~~~~~~\n";
     cout<<"Name: "<<name<<"\n";
     cout<<"Roll: "<<roll<<"\n";

@@ -4,7 +4,7 @@ and write the code to add 2 time objects the object must be passed as function a
 
 class Time{
 public:
-    Time(int hr,int mi,int se):
+    Time(int hr=0,int mi=0,int se=0):
         h(hr),m(mi),s(se){}
 
     Time(const Time& t){
@@ -39,7 +39,7 @@ int main(int argc, char const *argv[])
     t1.showTime();
     Time t2 = Time(1,45,15);
     t2.showTime();
-    Time res = Time(0,0,0);
+    Time res = Time();
     res.addTime(t1, t2);
     res.showTime();
     remove(argv[0]);
