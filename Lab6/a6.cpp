@@ -1,119 +1,165 @@
 /*Write a program to create a class called STUDENT with data members Roll Number, Name and Age. Using inheritance, create the classes UGSTUDENT and PGSTUDENT having fields a semester, fees and stipend. Enter the data for at least 5 students. Find the average age for all UG and PG students separately.*/
 #include <iostream>
-#define SIZE 2
+#include <cstring>
+using std::cin;
+using std::endl;
+using std::cout;
+#define LEN 20
+#define SIZE 3
 
-class UGStudent{
-protected:
-    int semister;
-    int fees;
-    int stipend;
-public:
-    void display(){
-        std::cout<<"UGStudent\n";
-        std::cout<<"Semister: "<<semister<<std::endl;
-        std::cout<<"fees: Rs"<<fees<<std::endl;
-        std::cout<<"stipend: "<<stipend<<std::endl;
-    }
-};
-
-class PGStudent{
-protected:
-    int semister;
-    int fees;
-    int stipend;
-public:
-    void display(){
-        std::cout<<"PGStudent\n";
-        std::cout<<"Semister: "<<semister<<std::endl;
-        std::cout<<"fees: Rs"<<fees<<std::endl;
-        std::cout<<"stipend: "<<stipend<<std::endl;
-    }
-};
-
-class Student : public PGStudent, public UGStudent{
-    char *name;
+class Student{
+private:
     int roll;
     int age;
-    char S;
+    char name[LEN] = {0};
+
 public:
-    Student(){}
-    Student(char *k, int r, int a):name(k),roll(r),age(a){
-        printf("Enter [U] for UGStudent and [P] for PGstudent: ");
-        std::cin>>S;
-        switch(S){
-            case 'U': 
-            std::cout<<"Enter the semister no.: ";
-            std::cin>>UGStudent::semister;
-            std::cout<<"Enter the fees, stipend: ";
-            std::cin>>UGStudent::fees>>UGStudent::stipend;
-            break;
-            case 'P': 
-            std::cout<<"Enter the semister no.: ";
-            std::cin>>PGStudent::semister;
-            std::cout<<"Enter the fees, stipend: ";
-            std::cin>>PGStudent::fees>>PGStudent::stipend;
-            break;
-        }
+    Student(char *x, int r, int a):roll(r), age(a){
+        strncpy(name,x,strlen(x)+1);
     }
-
-    void display(){
-        std::cout<<"name: "<<name<<std::endl;
-        std::cout<<"roll: "<<roll<<std::endl;
-        std::cout<<"age: "<<age<<std::endl;
-        switch(S){
-            case 'U': UGStudent::display();break;
-            case 'P': PGStudent::display();break;
-        }
+    virtual void display(){
+        cout<<"\tName: "<<name<<endl;
+        cout<<"\troll: "<<roll<<endl;
+        cout<<"\tage: "<<age<<endl;
     }
-
-    void AverageStudent(int& ageUG,int& countUG, int& agePG, int& countPG){
-        switch(S){
-            case 'U':
-            ageUG += age;
-            countUG++;
-            break;
-            case 'P':
-            agePG += age;
-            countPG++;
-            break;
-        }
+    virtual char whatClass()=0;
+    int getAge(){
+        return age;
     }
 };
 
-int main(int argc, char const *argv[])
-{
-    int n=SIZE;
-    Student *s = new Student[SIZE];
-    int i=0;
-    while(n--){
-        char na[30];
-        int r,a;
-        std::cout<<"Enter the name: ";
-        std::cin.ignore();
-        std::cin.getline(na,30);
+class UGStudent : public Student{
+private:
+    char semister;
+    int fees;
+    int stipend;
+    int indx;
 
-        std::cout<<"Enter the roll: ";
-        std::cin>>r;
-        std::cout<<"Enter the age: ";
-        std::cin>>a;
-        s[i] = Student(na,r,a);
-        i++;
-    }
-    int ageUG = 0,
-        NUG = 0,
-        agePG = 0,
-        NPG = 0;
-    for(i=0; i<SIZE;i++){
-        std::cout<<"---------------------\n";
-        s[i].display();
-        s[i].AverageStudent(ageUG,NUG,agePG,NPG);
+public:
+    static int countU;
+    UGStudent(char *x, int r, int a, char sem, int f, int s):
+        Student(x,r,a)
+    {
+        semister = sem;
+        fees = f;
+        stipend = s;
+        indx = ++countU;
     }
 
-    std::cout<<"----------------------\n";
-    std::cout<<"Average Age for UGStudent: "<<(ageUG/NUG)<<std::endl;
-    std::cout<<"Average Age for PGStudent: "<<(agePG/NPG)<<std::endl;
+    inline char whatClass(){
+        return 'u';
+    }
+    int getAge(){
+        return Student::getAge();
+    }
+    void display();
+};
+int UGStudent::countU=0;
 
-    
+class PGStudent : public Student{
+private:
+    char semister;
+    int fees;
+    int stipend;
+    int indx;
+
+public:
+    static int countP;
+    PGStudent(char *x, int r, int a, char sem, int f, int s):
+        Student(x,r,a)
+    {
+        semister = sem;
+        fees = f;
+        stipend = s;
+        indx = ++countP;
+    }
+
+    inline char whatClass(){
+        return 'p';
+    }
+
+    int getAge(){
+        return Student::getAge();
+    }
+
+    void display();
+};
+int PGStudent::countP=0;
+
+void UGStudent::display(){
+    cout<<"#UGStudent\n";
+    Student::display();
+    cout<<"\tsemister: "<<semister<<endl;
+    cout<<"\tfees: "<<fees<<endl;
+    cout<<"\tstipend: "<<stipend<<endl;
+}
+
+void PGStudent::display(){
+    cout<<"#PGStudent\n";
+    Student::display();
+    cout<<"\tsemister: "<<semister<<endl;
+    cout<<"\tfees: "<<fees<<endl;
+    cout<<"\tstipend: "<<stipend<<endl;
+}
+
+int main(int argc, char** argv) {
+    // create a 5 student 
+    Student *arr[SIZE];
+    char X;
+    for(int i=0;i<SIZE;i++)
+    {
+        char name[LEN] = {0};
+        cout<<"Enter the name, roll, age\n";
+        cin.ignore();
+        cin.getline(name, LEN);
+
+        int r, a;
+        cin>>r>>a;
+        char sem;
+        int fee, stip;
+        cout<<"Enter the U/P for undergragate / postGraduate-> ";
+        cin>>X;
+        switch(X){
+            case 'U':
+            case 'u':
+            cout<<"Enter the semister, fees, stipend-> ";
+            cin>>sem;
+            cin>>fee>>stip;
+
+            arr[i] = new UGStudent(name,r,a, sem,fee,stip);
+
+            break;
+
+            case 'P':
+            case 'p':
+            cout<<"Enter the semister, fees, stipend-> ";
+            cin>>sem;
+            cin>>fee>>stip;
+
+            arr[i] = new PGStudent(name,r,a, sem,fee,stip);
+
+            break;
+        }
+    }
+
+    int utot=0,
+        ptot=0;
+    for(int i=0;i<SIZE;i++)
+    {
+        arr[i]->display();
+        if(arr[i]->whatClass() == 'u'){
+            utot += arr[i]->getAge();
+        }
+        else{
+            ptot += arr[i]->getAge();
+        }
+        printf("\n");
+    }
+
+    cout<<"Average age of UGStudent: "<<utot/UGStudent::countU<<endl;
+    cout<<"Average age of PGStudent: "<<ptot/PGStudent::countP<<endl;
+
+
     remove(argv[0]);
-    return 0;
+    return EXIT_SUCCESS;
 }
