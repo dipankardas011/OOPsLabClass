@@ -33,7 +33,8 @@ supporting class to test this class.✅
 * Create a class Shape derive classes named "Dimension2" and "Dimension3" from "Shape" class. derive 2 classes namely "rectangle" and "circle" from class "dimension2" derive 2 classes namely "cylinder" and "sphere" from class "Dimensio3" include the data members and function in the revelant classes to find area of a rectangle and a circle also surface area and volume of a cylinder and a sphere
     area of rectangle = l*b        area circle = pi * r^2
     area of cylinder = pi * r^2 * h      volume of sphere = 4/3 * pi * r^3
-    surface area of cylinder= 2pi * rh      Surfece area of sphere = 4pi r^2✅
+    surface area of cylinder= 2pi * rh + 2pir^2      Surfece area of sphere = 4pi r^2✅
+* WAP a menudriven program that reads title of a book from the user the program will check if the book is avilable or not if available then display the details of the booksuch as author, price and number of copies available calculate the bill of the user as per the number of copies required decrement the count of books requested from available copies the program must slo have functions to have functions to update the number of copies and the price of the book
 
 # O/P
 ![]()

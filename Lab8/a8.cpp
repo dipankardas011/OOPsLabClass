@@ -49,7 +49,7 @@ public:
 class Cylinder : public Dimension3{
 public:
     void SurfaceArea(double r=1, double h=1){
-        cout<<"Cylinder Surface Area: "<<2*PI*r*h<<endl;
+        cout<<"Cylinder Surface Area: "<<2*PI*r*h + 2*PI*r*r<<endl;
     }
 
     void Volume(double r=1, double h=1){
