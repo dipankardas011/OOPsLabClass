@@ -1,6 +1,7 @@
 # OOPs Class
-3rd semister
+![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
+3rd semister
 Compiled using 
 ```
 g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
