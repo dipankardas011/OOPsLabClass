@@ -18,7 +18,7 @@ public:
         {
             if(email_address.front() == AMP)
                 return false;
-            const int pos = email_address.find_last_of(ENDS);
+            auto pos = email_address.find_last_of(ENDS);
             // cout<<pos<<endl;
             if(pos != std::string::npos && email_address.at(pos-ENDS.length()) != AMP)
                 return true;

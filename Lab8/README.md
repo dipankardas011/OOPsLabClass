@@ -34,10 +34,9 @@ supporting class to test this class.✅
     area of rectangle = l*b        area circle = pi * r^2
     area of cylinder = pi * r^2 * h      volume of sphere = 4/3 * pi * r^3
     surface area of cylinder= 2pi * rh + 2pir^2      Surfece area of sphere = 4pi r^2✅
-* WAP a menudriven program that reads title of a book from the user the program will check if the book is avilable or not if available then display the details of the booksuch as author, price and number of copies available calculate the bill of the user as per the number of copies required decrement the count of books requested from available copies the program must slo have functions to have functions to update the number of copies and the price of the book
+* WAP a menudriven program that reads title of a book from the user the program will check if the book is avilable or not if available then display the details of the booksuch as author, price and number of copies available calculate the bill of the user as per the number of copies required decrement the count of books requested from available copies the program must slo have functions to have functions to update the number of copies and the price of the book✅
 
 # O/P
-![]()
-![]()
-![]()
-![]()
+![](../Lab8/01.png)
+![](../Lab8/02.png)
+![](../Lab8/03.png)
