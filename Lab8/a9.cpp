@@ -63,7 +63,7 @@ public:
                 {
                     shelf[i].noOfCopies -= no;
                     display(shelf[i]);
-                    cout << "| " << no * shelf[i].price << " |" << endl;
+                    cout << "| $" << no * shelf[i].price << " |" << endl;
                     cout << "| " << no << " |" << endl;
                     cout << "+" << std::setw(20)
                          << std::setfill('-') << "+" << endl;
@@ -86,20 +86,16 @@ public:
         cout << "| " << o.author << " |" << endl;
     }
 
-    inline void inventory()
+    void inventory()
     {
         cout << "INVENTORY\n";
         for (int i = 0; i < totalBooks; i++)
         {
             cout << "+++++++++++++++++++++++\n";
-            cout << "+ title "
-                 << ": " << shelf[i].title << endl;
-            cout << "+ author "
-                 << ": " << shelf[i].author << endl;
-            cout << "+ price "
-                 << ": " << shelf[i].price << endl;
-            cout << "+ noOfcopies left "
-                 << ": " << shelf[i].noOfCopies << endl;
+            cout << "+ title: " << shelf[i].title << endl;
+            cout << "+ author: " << shelf[i].author << endl;
+            cout << "+ price: $" << shelf[i].price << endl;
+            cout << "+ noOfcopies left: " << shelf[i].noOfCopies << endl;
         }
         cout << "+++++++++++++++++++++++\n";
     }

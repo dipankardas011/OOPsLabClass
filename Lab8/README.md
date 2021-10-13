@@ -38,4 +38,5 @@ ii) read the ballots and count the votes for each candidates✅
 # O/P
 ![](../Lab8/01.png)
 ![](../Lab8/02.png)
-![](../Lab8/03.png)
+![](../Lab8/q9.png)
+![](../Lab8/q9i.png)
