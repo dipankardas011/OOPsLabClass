@@ -8,9 +8,9 @@
 using namespace std;
 
 class Account {
+protected:
   string name;
   long accNo;
-protected:
   float balance;
 public:
   Account(string n, long acc, float bal) : name(n),accNo(acc),balance(bal){}
@@ -19,11 +19,7 @@ public:
   virtual void withdraw(float request) = 0;
 
 
-  virtual void display(){
-    cout<<"\tname: "<<name<<endl;
-    cout<<"\tAccNo: "<<accNo<<endl;
-    cout<<"\tBalance: "<<balance<<endl;
-  }
+  virtual void display(){}
 };
 
 class Savings : public Account{
@@ -45,7 +41,9 @@ public:
 
   void display() {
     cout<<"##Savings\n";
-    Account::display();
+    cout<<"\tname: "<<name<<endl;
+    cout<<"\tAccNo: "<<accNo<<endl;
+    cout<<"\tBalance: "<<balance<<endl;
   }
 };
 
@@ -62,12 +60,14 @@ public:
     // if (a > balance)
       // overDue = a+balance;
       balance = balance + a;// like credit system the loan increases
-    cout<<"\"Overdue\": "<<balance<<endl;
+    cout<<"\"Money to Pay\": "<<balance<<endl;
   }
 
   void display() {
     cout<<"##Current\n";
-    Account::display();
+    cout<<"\tname: "<<name<<endl;
+    cout<<"\tAccNo: "<<accNo<<endl;
+    cout<<"\tMoneyToPay: "<<balance<<endl;
   }
 };
 

@@ -28,5 +28,3 @@ returning an object.✅
 # O/P
 ![](../Lab9/01.png)
 ![](../Lab9/02.png)
-![](../Lab9/03.png)
-![](../Lab9/04.png)

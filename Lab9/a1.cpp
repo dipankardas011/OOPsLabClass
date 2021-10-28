@@ -37,8 +37,6 @@ public:
   }
 
   void calculateSalary() {
-    float DA = 0.0f;
-    float HRA = 0.0f;
     DA = 0.8 * salary;
     HRA = 0.1 * salary;
     GSal = DA + HRA + salary;
