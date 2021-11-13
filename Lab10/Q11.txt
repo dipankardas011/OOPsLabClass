@@ -1,5 +1,5 @@
-my name is dipankar das
-Kalinga institute of industrial technology
 C/C++
 Java
-Hello world
+Typescript
+Javascript
+.NET

@@ -38,6 +38,7 @@ int main(int argc, char** argv) {
         cout << ch;
     }
     cout << ">>>>>(END)" << endl;
+    file2.close();
 
     remove(argv[0]);
     return EXIT_SUCCESS;
