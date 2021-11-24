@@ -1,5 +1,0 @@
-C/C++
-Java
-Typescript
-Javascript
-.NET
