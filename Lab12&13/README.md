@@ -15,4 +15,5 @@
 9. Rewrite program 7 using class template✅
 
 # O/P
-
+![](../Lab12&13/01.png)
+![](../Lab12&13/02.png)
