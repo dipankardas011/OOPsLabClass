@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
     std::cout<<"most occuring element= "<<max<<std::endl;
 
 
-    delete(a);
+    delete[] a;
     
     remove(argv[0]);
     return 0;

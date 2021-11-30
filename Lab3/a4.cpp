@@ -34,7 +34,7 @@ int main(int argc, char const *argv[])
         ee[i].display();
     printf("+------+-------+\n");
 
-    delete(ee);
+    delete[] ee;
     remove(argv[0]);
     return 0;
 }

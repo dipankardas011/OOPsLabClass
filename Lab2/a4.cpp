@@ -1,6 +1,7 @@
 /*Write a program to find out all roots of a quadratic equation*/
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 class quadratic{
 public:
     quadratic(int x, int y, int z):a(x),b(y),c(z){}
@@ -15,12 +16,12 @@ public:
             double ii=std::sqrt(-kk);
             r1 = (-b )/(double)(2*a);
             r2 = (-b )/(double)(2*a);
-            std::cout<<"roots :- \n\t"<<r1 <<" "<<(ii/(double)(2*a))<<"i\n"
-                     <<"\t"<< r2<<" "<< -(ii/(double)(2*a))<<"i"<<std::endl;                     
+            std::cout << std::ios::showpos << "roots :- \n\t" << r1 << " " << (ii / (double)(2 * a)) << "i\n"
+                      << "\t" << r2 << " " << -(ii / (double)(2 * a)) << "i" << std::endl;
         }else{
             r1 = (-b + std::sqrt(kk))/(2*a);
             r2 = (-b - std::sqrt(kk))/(2*a);
-            std::cout<<"roots :- \n\t"<<r1<<"\n\t"<<r2<<std::endl;
+            std::cout << std::ios::showpos << "roots :- \n\t" << r1 << "\n\t" << r2 << std::endl;
         }
     }
 private:

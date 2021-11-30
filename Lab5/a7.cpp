@@ -14,7 +14,7 @@ public:
     ~Example(){
         std::cout<<"Destructor called for object id: "<<count<<"\n";
         count--;
-        delete(marks);
+        delete[] marks;
     }
 };
 

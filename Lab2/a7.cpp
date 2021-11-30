@@ -15,7 +15,7 @@ int main(int argc, char const *argv[])
         std::cin>>arr[i];
 
     printf("Entered successfully\n");
-    delete (arr);
+    delete[] arr;
     printf("deallocated successfully\n");
     remove(argv[0]);
     return 0;

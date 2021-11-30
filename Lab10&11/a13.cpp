@@ -46,7 +46,11 @@ int main(int argc, char** argv) {
     FILE.close();
 
 
-    FILE.open("Q13.bin", std::ios::in | std::ios::binary);
+    FILE.open("Q13.bin", std::ios::in | std::ios::binary | std::ios::ate);
+
+    cout << "No of objects: " << (FILE.tellg() / sizeof(Student)) << endl;
+
+    FILE.seekg(0, ios::beg);
     i = 0;
 
     cout << "@@Q13.bin@@ (START)<<<<<<";
@@ -62,9 +66,9 @@ int main(int argc, char** argv) {
     FILE.close();
 
     delete[] stu;
-    FILE.open("Q13.bin", std::ios::in | std::ios::binary | std::ios::ate);
-    cout << "No of objects: " << (FILE.tellg() / sizeof(Student)) << endl;
-    FILE.close();
+    // FILE.open("Q13.bin", std::ios::in | std::ios::binary | std::ios::ate);
+    // cout << "No of objects: " << (FILE.tellg() / sizeof(Student)) << endl;
+    // FILE.close();
     
     remove(argv[0]);
     return EXIT_SUCCESS;

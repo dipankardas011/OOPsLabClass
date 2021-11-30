@@ -48,9 +48,10 @@ int main(int argc, char** argv) {
     FILE.open("Q14.txt", std::ios::ate | std::ios::in | std::ios::binary);
     size_t N = (FILE.tellg() / sizeof(Employee));
     cout << "Number of Employees: {" << N << "}" << endl;
-    FILE.close();
+    // FILE.close();
 
-    FILE.open("Q14.txt", std::ios::in | std::ios::binary);
+    // FILE.open("Q14.txt", std::ios::in | std::ios::binary);
+    FILE.seekg(0, std::ios::beg);
 
     cout << "@@Q14.txt@@(START)<<<<<\n";
 

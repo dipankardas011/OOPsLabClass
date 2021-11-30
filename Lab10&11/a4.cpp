@@ -21,7 +21,7 @@ public:
         }
         if(min<0){
             min+=60;
-            hrs++;
+            hrs--;
         }
     }
 
@@ -39,7 +39,7 @@ public:
 };
 
 int main(int argc, char** argv) {
-    Time t1(5,6,45);
+    Time t1(4,59,59);
 
     t1.timeNow();
     ++t1;
