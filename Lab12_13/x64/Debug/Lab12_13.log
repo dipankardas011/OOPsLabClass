@@ -1,0 +1,33 @@
+﻿  Main.cpp
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(26,21): warning C4101: 'e': unreferenced local variable
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(165,20): warning C4101: 'i': unreferenced local variable
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(169,21): warning C4101: 'c': unreferenced local variable
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(223,26): warning C4101: 'e': unreferenced local variable
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(336,51): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(445,51): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(350,19): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(349): message : while compiling class template member function 'void Q8::Arrays<float>::swap(int,int)'
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(392): message : see reference to function template instantiation 'void Q8::Arrays<float>::swap(int,int)' being compiled
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(414): message : see reference to class template instantiation 'Q8::Arrays<float>' being compiled
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(352,22): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(252,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(290): message : see reference to function template instantiation 'void Q6::swap<T>(T &,int,int)' being compiled
+          with
+          [
+              T=float *
+          ]
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(310): message : see reference to function template instantiation 'void Q6::sortIt<float*>(T &,int)' being compiled
+          with
+          [
+              T=float *
+          ]
+C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\Lab12_13\Main.cpp(254,18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Lab12_13.vcxproj -> C:\Users\DipankarDas\Desktop\OOPS\OOPSSol\x64\Debug\Lab12_13.exe
