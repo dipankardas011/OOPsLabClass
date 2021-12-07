@@ -45,12 +45,15 @@ int main(int argc, char** argv) {
 
     FILE.close();
 
+    // ios::ate => when reading i.e. initial to end but can change the position 
+    // ios::app => when writing i.e. intial to end of the file but cant move it
+    // ate	at end	The output position starts at the end of the file.
+    // app	append	All output operations happen at the end of the file, appending to its existing contents.
+    // trunc	truncate	Any contents that existed in the file before it is open are discarded.
     FILE.open("Q14.txt", std::ios::ate | std::ios::in | std::ios::binary);
     size_t N = (FILE.tellg() / sizeof(Employee));
     cout << "Number of Employees: {" << N << "}" << endl;
-    // FILE.close();
-
-    // FILE.open("Q14.txt", std::ios::in | std::ios::binary);
+    
     FILE.seekg(0, std::ios::beg);
 
     cout << "@@Q14.txt@@(START)<<<<<\n";

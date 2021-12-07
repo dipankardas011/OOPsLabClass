@@ -11,7 +11,11 @@ int main(int argc, char** argv) {
     cout << "Enter ~ to STOP Input" << endl;
     int i = 0;
     while (i < MAX_FILE_LENGTH) {
-        cin >> ch;
+        /**
+         * @bug cin will remove the spaces
+        */
+        // cin >> ch;
+        scanf("%c", &ch);
         if (ch == '~')
             break;
         i++;

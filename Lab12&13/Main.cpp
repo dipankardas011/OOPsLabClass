@@ -208,7 +208,7 @@ namespace Q5
     public:
         Rethrow()
         {
-            cout << "Enter the value between 1-100" << endl;
+            cout << "Enter the value between 1-10" << endl;
             cin >> a;
         }
 
