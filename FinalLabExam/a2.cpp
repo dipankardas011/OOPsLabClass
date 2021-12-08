@@ -1,59 +1,47 @@
-/**/
+/**
+ * @wrong we have to do it using function template
+*/
 #include <iostream>
 using namespace std;
 
-template <class T>
-class Array{
-    T *arr;
-    int size;
+template <typename T>
+void display(T *arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << ' ';
+    }
+    cout << endl;
+}
 
-    public:
-    Array(int n){
-        size = n;
-        arr = new T[size];
-    }
-    ~Array(){
-        delete[] arr;
-    }
-
-    void input(){
-        cout << "Enter the data" << endl;
-        for (int i = 0; i < size;i++)
-            cin >> arr[i];
-    }
-    void display(){
-        for (int i = 0; i < size; i++)
+template <typename T>
+void sortit(T *arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size - i - 1; j++)
         {
-            cout << arr[i] << ' ';
-        }
-        cout << endl;
-    }
-
-    void sortit(){
-        for (int i = 0; i < size; i++)
-        {
-            for (int j = 0; j < size-i-1; j++)
+            if (arr[j] > arr[j + 1])
             {
-                if(arr[j] > arr[j+1]){
-                    T temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
+                T temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
             }
         }
     }
-};
+}
 
-int main(int argc, char** argv) {
-    Array<int> ob1(5);
-    ob1.input();
-    ob1.sortit();
-    ob1.display();
+int main(int argc, char **argv)
+{
+    int arr[] = {4,6,1,2,3};
+    int n1 = 5;
+    sortit<int>(arr, n1);
+    display<int>(arr, n1);
 
-    Array<float> ob2(5);
-    ob2.input();
-    ob2.sortit();
-    ob2.display();
+    float arr1[] = {5.4, 6.7, 1.2, 10.1, 0.5 };
+    int n2 = 5;
+    sortit<float>(arr1, n2);
+    display<float>(arr1, n2);
     remove(argv[0]);
     return EXIT_SUCCESS;
 }
