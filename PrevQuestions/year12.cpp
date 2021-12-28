@@ -8,7 +8,7 @@
  */
 
 /**
- * @def WAP to declare static objects and siaplay its contents
+ * @def WAP to declare static objects and display its contents
  */
 namespace Q1{
 
@@ -30,7 +30,7 @@ namespace Q1{
     }
 }
 /**
- * @def WAP to declare 3 classes a1,a2,a3 the classes have provate data memeber var of string assign the first , surname to classes a1, a2 respectively 
+ * @def WAP to declare 3 classes a1,a2,a3 the classes have provate data member var of string assign the first , surname to classes a1, a2 respectively 
  * class a3 will concaterate the 2 and store it and print it
  */
 namespace Q2{
@@ -145,7 +145,7 @@ namespace Q5{
 /**
  * @def wap to enter the mobile number 
  * [X] it must have the country code(+91 like) in the begin
- * [X] the total digits must be exactly 10 excluding the counrty code
+ * [X] the total digits must be exactly 10 excluding the country code
  * [X] the first digit after the country code must be not zero
  */
 
@@ -197,6 +197,115 @@ namespace Q7{
     }
 }
 
+/**
+ * @def to find the difference of time
+ * t3.timeDiff(t1,t2)
+ * t3 = t1.timeDiff(t2) { friend }
+ * t3 = timeDiff(t1,t2) { friend }
+ * t3 = t1-t2 { operator overloading }
+ */
+
+namespace Q8{
+    class Time{
+        int hrs, min, sec;
+        public:
+        Time(int h=0,int m=0,int s=0):hrs(h),min(m),sec(s){}
+
+        void timeDiff(Time& t1, Time& t2){
+            this->sec = t1.sec - t2.sec;
+            this->min = t1.min - t2.min;
+            this->hrs = t1.hrs - t2.hrs;
+
+            if(this->sec < 0){
+                this->sec += 60;
+                this->min -= 1;
+            }
+            if(this->min < 0){
+                this->min += 60;
+                this->hrs -= 1;
+            }
+        }
+
+        void display(){
+            std::cout << "\tTime: ";
+            std::cout << std::setw(2) << this->hrs << ":"
+                      << std::setw(2) << this->min << ":"
+                      << std::setw(2) << this->sec << std::endl;
+        }
+
+        friend Time timeDiff(Time &, Time &);
+        Time timeDiff(Time& t){
+            Time res;
+            res.sec = this->sec - t.sec;
+            res.min = this->min - t.min;
+            res.hrs = this->hrs - t.hrs;
+            if(res.sec < 0){
+                res.sec += 60;
+                res.min -= 1;
+            }
+            if(res.min < 0){
+                res.min += 60;
+                res.hrs -= 1;
+            }
+            return res;
+        }
+
+        Time operator - (Time &t){
+            Time res;
+            res.sec = this->sec - t.sec;
+            res.min = this->min - t.min;
+            res.hrs = this->hrs - t.hrs;
+            if(res.sec < 0){
+                res.sec += 60;
+                res.min -= 1;
+            }
+            if(res.min < 0){
+                res.min += 60;
+                res.hrs -= 1;
+            }
+            return res;
+        }
+    };
+
+    Time timeDiff(Time& t1, Time& t2){
+        Time res;
+        res.sec = t1.sec - t2.sec;
+        res.min = t1.min - t2.min;
+        res.hrs = t1.hrs - t2.hrs;
+        if(res.sec < 0){
+            res.sec += 60;
+            res.min -= 1;
+        }
+        if(res.min < 0){
+            res.min += 60;
+            res.hrs -= 1;
+        }
+        return res;
+    }
+
+
+    int exec(){
+        Time t1(14, 31);
+        Time t2(9,1);
+        Time t3;
+        t3.timeDiff(t1, t2);
+        t3.display();
+
+        Time t4 = timeDiff(t1, t2);
+        t4.display();
+
+        Time t5 = t1.timeDiff(t2);
+        t5.display();
+
+        Time t6 = t1 - t2;
+        t6.display();
+
+        return 0;
+    }
+}
+
+
+
 int main(int argc, char** argv) {
     Q1::exec();
     Q2::exec();
@@ -204,6 +313,7 @@ int main(int argc, char** argv) {
     Q4::exec();
     Q5::exec();
     Q6::exec();
+    Q8::exec();
     remove(argv[0]);
     return EXIT_SUCCESS;
 }
